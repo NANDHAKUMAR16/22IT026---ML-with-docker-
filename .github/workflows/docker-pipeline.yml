@@ -5,4 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print-your-name
-        run: echo "Hello-World! - 22IT026"
+        run: echo "Hello-World! - 22IT026"
