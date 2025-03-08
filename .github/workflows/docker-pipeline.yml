@@ -6,3 +6,12 @@ jobs:
     steps:
       - name: print-your-name
         run: echo "Hello-World! - 22IT026"
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Docker Build
+        run: docker build -t nandhakumarbm/22it026-ml-model-22it026 .
+
+      - name: Docker Images
+        run: docker images
