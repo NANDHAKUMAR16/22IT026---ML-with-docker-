@@ -1,25 +1,28 @@
 name: docker-pipeline-nandhakumarbm
+
 on: push
+
 jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
-      - name: print-your-name
+      - name: Print Your Name
         run: echo "Hello-World! - 22IT026"
 
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Docker Build
         run: docker build -t nandhakumarbm/22it026-ml-model-22it026 .
 
-      - name: Docker Images
+      - name: List Docker Images
         run: docker images
 
-      - name: Login to GitHub Container Registry
+      - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Docker Push
-        run: docker push nandhakumarbm/ml-model-22it026
+
+      - name: Push Docker Image
+        run: docker push nandhakumarbm/22it026-ml-model-22it026
